@@ -1,3 +1,6 @@
+#from email.message import EmailMessage
+from django.core.mail import EmailMessage
+from django.conf import settings
 from django.shortcuts import render
 from django.http import HttpResponse
 from PortfolioDev.models import Visitor
@@ -23,13 +26,13 @@ def index(request):
        
        
        # Send an email
-       send_mail(
-           'Visiteur',# Subject
-           message, # MessageW
-           ['developer.testmail2023@gmail.com'], # From
-           ['florjanblakaj@hotmail.com'] # To
+       email = EmailMessage(
+           'Subject',
+           'Body',
+           settings.EMAIL_HOST_USER, # From
+           ['florjanblakaj@hotmail.com'], # To
            )       
-
+       email.send()
     #context = {'form': form}
     return render(request, "index.html")
     
