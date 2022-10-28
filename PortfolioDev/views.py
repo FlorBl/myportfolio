@@ -24,10 +24,10 @@ def index(request):
        
        # Send an email
        send_mail(
-           'Message Visiteur',# Subject
+           'Visiteur',# Subject
            message, # Message
-           email, # From
-           ['florian.blakaj0@gmail.com'], # To
+           ['developer.testmail2023@gmail.com'], # From
+           ['florjanblakaj@gmail.com'] # To
            
        )       
 
