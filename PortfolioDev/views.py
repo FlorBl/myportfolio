@@ -25,11 +25,10 @@ def index(request):
        # Send an email
        send_mail(
            'Visiteur',# Subject
-           message, # Message
+           message, # MessageW
            ['developer.testmail2023@gmail.com'], # From
            ['florjanblakaj@hotmail.com'] # To
-           
-       )       
+           )       
 
     #context = {'form': form}
     return render(request, "index.html")
