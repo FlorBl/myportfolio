@@ -28,10 +28,10 @@ $('#greetingEN').click(function(){
     $('#Project5Description').html("A front-end for an email client that makes API calls to send and receive emails.")
 
     // Contact Form
-    $('#hideH2').html('Me Joindre');
-    $('#nom').html('Nom');
-    $('#courriel').html('Courriel');
-    $('#sendMessage').val('Envoyez');
-    $('#resetForm').val('Réinitialiser');
+    $('#hideH2').html('Contact');
+    $('#nom').html('Name');
+    $('#courriel').html('Email');
+    $('#sendMessage').val('Send Message');
+    $('#resetForm').val('Reset');
 })
 });
