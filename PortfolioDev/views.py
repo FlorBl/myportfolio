@@ -3,7 +3,8 @@ from django.http import HttpResponse
 from PortfolioDev.models import Visitor
 from django import forms
 from django.forms.models import model_to_dict
-from .forms import VisitorForm
+
+from django.core.mail import send_mail
 # Create your views here.
 
 def is_ajax(request):
@@ -18,7 +19,17 @@ def index(request):
        email = request.POST['email']     
        message = request.POST['message']
        visitorInfo = Visitor(name=name, email=email, message=message)
-       visitorInfo.save()       
+       visitorInfo.save()
+       
+       
+       # Send an email
+       send_mail(
+           'Message Visiteur',# Subject
+           message, # Message
+           email, # From
+           ['florian.blakaj0@gmail.com'], # To
+           
+       )       
 
     #context = {'form': form}
     return render(request, "index.html")

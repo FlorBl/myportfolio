@@ -133,3 +133,19 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 django_heroku.settings(locals())
+
+
+# First Method: Test Method, which comes with the Python server for testing.
+
+# Email Settings
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = '1025'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = False
+#EMAIL_USE_SSL = False
+
+
+# Goes into a different terminal while the main one is active, for debugging purposes.
+
+# python -m smtpd -n -c DebuggingServer localhost:1025
