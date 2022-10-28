@@ -27,7 +27,7 @@ def index(request):
            'Visiteur',# Subject
            message, # Message
            ['developer.testmail2023@gmail.com'], # From
-           ['florjanblakaj@gmail.com'] # To
+           ['florjanblakaj@hotmail.com'] # To
            
        )       
 
