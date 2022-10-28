@@ -23,17 +23,9 @@ def index(request):
        message = request.POST['message']
        visitorInfo = Visitor(name=name, email=email, message=message)
        visitorInfo.save()
-       
-       
-       # Send an email
-       email = EmailMessage(
-           'Subject',
-           'Body',
-           settings.EMAIL_HOST_USER, # From
-           ['florjanblakaj@hotmail.com'], # To
-           )       
-       email.send()
-    #context = {'form': form}
+       msg = EmailMessage('Request Callback',
+                            'Here is the message.', to=['florjanblakaj@hotmail.com'])
+       msg.send()
     return render(request, "index.html")
     
 
