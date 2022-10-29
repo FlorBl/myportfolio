@@ -1,5 +1,4 @@
 #from email.message import EmailMessage
-from django.core.mail import EmailMessage
 from django.conf import settings
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -7,8 +6,9 @@ from PortfolioDev.models import Visitor
 from django import forms
 from django.forms.models import model_to_dict
 
-from django.core.mail import send_mail
-# Create your views here.
+from django.core import mail
+connection = mail.get_connection()
+connection.open()
 
 def is_ajax(request):
     return request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
@@ -23,9 +23,16 @@ def index(request):
        message = request.POST['message']
        visitorInfo = Visitor(name=name, email=email, message=message)
        visitorInfo.save()
-       msg = EmailMessage('Request Callback',
-                            'Here is the message.', to=['florjanblakaj@hotmail.com'])
-       msg.send()
+       
+       email1 = mail.EmailMessage(
+           'Hello',
+           'Body goes here',
+           settings.EMAIL_HOST_USER,
+           ['florjanblakaj@hotmail.com'],
+           connection=connection,
+       )
+       email1.send()
+       
     return render(request, "index.html")
     
 
