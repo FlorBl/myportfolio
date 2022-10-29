@@ -24,7 +24,6 @@ def index(request):
            settings.EMAIL_HOST_USER,
            ['florjanblakaj@hotmail.com'],
        )
-       email.fail_silently=False
        email.send()
        
     return render(request, "index.html")
