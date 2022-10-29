@@ -18,13 +18,16 @@ def index(request):
        name = request.POST['name']
        email = request.POST['email']     
        message = request.POST['message']
+       myEmail = 'florjanblakaj@hotmail.com'
        send_mail(
-           subject="Thats your subject",
-           message="This is your message",
-           from_email="developer.testmail2023@gmail.com",
+           name,
+           message,
+           settings.EMAIL_HOST_USER,
+           myEmail,
            fail_silently = False,
        )
        
+       print(settings.EMAIL_HOST_USER)
     return render(request, "index.html")
     
 
