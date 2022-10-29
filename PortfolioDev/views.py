@@ -1,14 +1,15 @@
 #from email.message import EmailMessage
+from multiprocessing import context
 from django.conf import settings
 from django.shortcuts import render
 from django.http import HttpResponse
 from PortfolioDev.models import Visitor
 from django import forms
+from django.template import loader
 from django.forms.models import model_to_dict
 
-from django.core import mail
-connection = mail.get_connection()
-connection.open()
+from django.core.mail import EmailMultiAlternatives
+
 
 def is_ajax(request):
     return request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
@@ -21,17 +22,15 @@ def index(request):
        name = request.POST['name']
        email = request.POST['email']     
        message = request.POST['message']
+       subject = 'Testing'
        visitorInfo = Visitor(name=name, email=email, message=message)
-       visitorInfo.save()
+
        
-       email1 = mail.EmailMessage(
-           'Hello',
-           'Body goes here',
-           settings.EMAIL_HOST_USER,
-           ['florjanblakaj@hotmail.com'],
-           connection=connection,
+       email = EmailMultiAlternatives(
+           "You got a promotion!", 'message', "Company x" + "- Good News" ['developer.testmail2023@gmail.com']
        )
-       email1.send()
+       
+       email.send()
        
     return render(request, "index.html")
     
