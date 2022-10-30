@@ -26,7 +26,7 @@ def index(request):
     
 
 def ajax_test(request):
-    if request.method == "POST":
+    if is_ajax(request=request) and request.method == "POST":
         #message = "This is ajax"
         name = request.POST['name']
         email = request.POST['email']     
@@ -36,7 +36,7 @@ def ajax_test(request):
         from_email = settings.DEFAULT_FROM_EMAIL
         message = 'Welcome Back!'
         recipient_list = ['florjanblakaj@hotmail.com']
-        html_message = '<h3>This is my HTML Test</h3>'
+        html_message = '<h3>This is my HTML Test - Pruduction</h3>'
         
         
 
