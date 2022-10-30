@@ -58,6 +58,8 @@ EMAIL_HOST_PASSWORD = 'joovhcxgwsstmqia'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
+DEFAULT_FROM_EMAIL = 'developer.testmail2023@gmail.com'
+
 # Application definition
 
 INSTALLED_APPS = [
