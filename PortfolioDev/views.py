@@ -26,7 +26,7 @@ def index(request):
     
 
 def ajax_test(request):
-    if is_ajax(request=request) and request.method == "POST":
+    if request.method == "POST":
         #message = "This is ajax"
         name = request.POST['name']
         email = request.POST['email']     
