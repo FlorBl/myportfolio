@@ -4,8 +4,8 @@ from PortfolioDev.models import Visitor
 
 # Mail
 from django.core.mail import send_mail
+from django.template.loader import render_to_string
 from django.conf import settings
-print(settings.EMAIL_HOST_USER)
 
 def is_ajax(request):
     return request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
@@ -18,24 +18,34 @@ def index(request):
        name = request.POST['name']
        email = request.POST['email']     
        message = request.POST['message']
-       myEmail = 'florjanblakaj@hotmail.com'
-       send_mail(
-           name,
-           message,
-           settings.EMAIL_HOST_USER,
-           myEmail,
-           fail_silently = False,
-       )
+       print(name)
+       print
        
-       print(settings.EMAIL_HOST_USER)
+
     return render(request, "index.html")
     
 
 def ajax_test(request):
-    if is_ajax(request=request):
-        message = "This is ajax"
-        print(message)     
+    if is_ajax(request=request) and request.method == "POST":
+        #message = "This is ajax"
+        name = request.POST['name']
+        email = request.POST['email']     
+        message = request.POST['message']
+        
+        html = render_to_string('contact.html',{
+        'name':name,
+        'email':email,
+        'message':message
+    })
+            
+
+        send_mail(
+            'Subject', # Subject
+            'The Message', # Message
+            'developer.testmail2023@gmail.com', # From
+            ['testmail2023@gmail.com'], html_message=html)
+       
     else:
         message = "Not ajax"
-        print(message)     
-    return HttpResponse(message)
+        #print(message) 
+    return render(request, "index.html")

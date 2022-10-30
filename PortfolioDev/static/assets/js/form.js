@@ -22,7 +22,7 @@ $(document).ready(function() {
             }
             else { /* If error doesnt exist */
                 $('form').hide();
-                if ($('#nom').html() == 'Nom'){
+                if ($('#nom').html() == 'Envoyez'){
                 $('#formtitle').html('Je vous reviendrai le plutôt possible.');
 
                 }

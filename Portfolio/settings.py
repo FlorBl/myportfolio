@@ -39,6 +39,24 @@ SECRET_KEY = env('SECRET_KEY')
 
 ALLOWED_HOSTS = []
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+'''
+
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = '02f4f24abe02b8'
+EMAIL_HOST_PASSWORD = 'd15d6587bde511'
+EMAIL_PORT = '2525'
+
+
+# Method 2: Production Way
+'''
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = '587'
+EMAIL_HOST_USER = 'developer.testmail2023@gmail.com'
+EMAIL_HOST_PASSWORD = 'joovhcxgwsstmqia'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
 
 # Application definition
 
@@ -161,6 +179,7 @@ EMAIL_USE_TLS = False
 
 
 # Method 2: Production Way
+'''
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
@@ -168,3 +187,4 @@ EMAIL_HOST_USER = 'developer.testmail2023@gmail.com'
 EMAIL_HOST_PASSWORD = 'joovhcxgwsstmqia'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
+'''
