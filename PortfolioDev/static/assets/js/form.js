@@ -12,7 +12,7 @@ $(document).ready(function() {
             /* Here we specify the request */
             type : 'POST',
             /* The route that we created */
-            url : 'http://florian-b.herokuapp.com/ajax_test'
+            url : '/ajax_test'
         })
         /* Here we specify what happends after the ajax call is complete.
         We'll use the .done function */
