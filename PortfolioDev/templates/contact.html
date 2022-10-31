@@ -1,7 +1,17 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Vazirmatn:wght@300&display=swap" rel="stylesheet">
 
-<h1 style="font-size : clamp(2rem, 10vw, 5rem);text-align:center;font-family: 'Annie Use Your Telescope', cursive;">Bonjour, {{ name }} !</h1> 
+<body style="">
 
-<p style="font-family: 'Vazirmatn', sans-serif; text-align:center;font-size : clamp(1rem, 6vw, 4rem); margin:5;">Je vous reviendrai le plutôt possible.</p>
+<div style="border-left:3px solid black;border-right:3px solid black;margin:5% 10%; max-width:80vw;background-color:white; opacity: 0.66;" >
+
+<h1 style="font-size : clamp(2rem, 8vw, 5rem);text-align:center;font-family: 'Annie Use Your Telescope', cursive;">Bonjour,</h1> 
+
+<p style="font-family: 'Vazirmatn', sans-serif; text-align:center;font-size : clamp(1rem, 4vw, 4rem); margin:5;"><strong>{{ name }}</strong> visited and left the following message: 
+    <br>
+<p style="border-top:2px solid black;border-bottom:2px solid black;padding:10px;font-family: 'Vazirmatn', sans-serif; text-align:center;font-size : clamp(1rem, 4vw, 4rem); margin:50px 10px;">{{ message }}</p>
+
+<p style="border-bottom:2px solid black;padding:10px;font-family: 'Vazirmatn', sans-serif; text-align:center;font-size : clamp(1rem, 3vw, 4rem); margin:0px 10px;">{{ email }}</p>
+ </p>
+
+
+</div>
+</body>

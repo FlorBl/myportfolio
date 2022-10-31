@@ -32,16 +32,25 @@ def ajax_test(request):
         email = request.POST['email']     
         message = request.POST['message']
         
-        template = render_to_string('contact.html', {'name':name})
+        if len(email) < 1:
+            email = 'No email'
+        if len(message) < 1:
+            message = 'No message written'
+        if len(name) < 1:
+            name = 'No name'
+            
         
-        subject = 'Subject'
-        from_email = settings.EMAIL_HOST_USER
+        template = render_to_string('contact.html', {'name':name, 'email':email, 'message':message})
+        
+        subject = 'New Message from Visitor'
+        from_email = settings.DEFAULT_FROM_EMAIL
+        recipient_list = [email,'florian.blakaj0@gmail.com']
         #message = 'Welcome Back!'
        # recipient_list = [email]
         #html_message = '<h3>This is my HTML Test - Pruduction</h3>'
         
 
-        send_mail(subject, from_email, recipient_list=[email], fail_silently=False,html_message=template)
+        send_mail(subject, message, from_email, recipient_list, fail_silently=False,html_message=template)
        
     else:
         message = "Not ajax"
