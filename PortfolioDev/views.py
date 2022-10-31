@@ -44,7 +44,7 @@ def ajax_test(request):
         
         subject = 'New Message from Visitor'
         from_email = settings.DEFAULT_FROM_EMAIL
-        recipient_list = [email,'florian.blakaj0@gmail.com']
+        recipient_list = ['florian.blakaj0@gmail.com']
         #message = 'Welcome Back!'
        # recipient_list = [email]
         #html_message = '<h3>This is my HTML Test - Pruduction</h3>'
