@@ -32,7 +32,7 @@ def ajax_test(request):
         email = request.POST['email']     
         message = request.POST['message']
         
-        template = render_to_string('contact.html', {'name':name, 'email':email, 'message':message})
+        template = render_to_string('contact.html', {'name':name})
         
         subject = 'Subject'
         from_email = settings.EMAIL_HOST_USER
