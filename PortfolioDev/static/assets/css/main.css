@@ -779,6 +779,7 @@ input[type="radio"] + label:before {
 .image img {
   border-radius: 4px;
   display: block;
+  opacity: 0.8;
 }
 
 .image.left,
@@ -1278,13 +1279,7 @@ button {
   -ms-transition: -ms-transform 0.325s ease-in-out,
     -ms-filter 0.325s ease-in-out;
   transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-  background-image: linear-gradient(
-    -225deg,
-    #231557 0%,
-    #44107a 29%,
-    #ff1361 67%,
-    #fff800 100%
-  );
+  background-image: linear-gradient(to right, #0f0c29, #3e3693, #24243e);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1682,7 +1677,7 @@ body.is-preload #header .content .inner {
   width: 40rem;
   max-width: 100%;
   background-color: rgba(27, 31, 34, 0.45);
-  border-radius: 4px;
+  border-bottom: opacity(0);
   opacity: 0;
 }
 
