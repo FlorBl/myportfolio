@@ -1277,7 +1277,7 @@ button {
   -ms-transition: -ms-transform 0.325s ease-in-out,
     -ms-filter 0.325s ease-in-out;
   transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-  background-image: linear-gradient(to right, #0f0c29, #4577cd, #24243e);
+  background-image: linear-gradient(to right, #0f0c29, #2273fe, #24243e);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1406,7 +1406,6 @@ body.is-preload #bg:before {
   position: absolute;
   top: calc(-3.5rem - 1px);
   left: calc(50% - 1px);
-  width: 1px;
   height: calc(3.5rem + 1px);
   background: #ffffff;
 }
@@ -1420,10 +1419,9 @@ body.is-preload #bg:before {
 }
 
 #header .logo {
-  width: 5.5rem;
-  height: 5.5rem;
-  line-height: 5.5rem;
-  border: solid 1px #ffffff;
+  width: 3rem;
+  height: 3rem;
+  line-height: 3.5rem;
   border-radius: 100%;
 }
 
@@ -1434,7 +1432,6 @@ body.is-preload #bg:before {
 #header .content {
   border-style: solid;
   border-color: #ffffff;
-  border-top-width: 1px;
   border-bottom-width: 1px;
   max-width: 100%;
 }
@@ -1842,4 +1839,9 @@ body.is-preload #footer {
 
 #work p {
   padding: 15px;
+}
+
+svg {
+  fill: currentColor;
+  color: #ffffff;
 }
