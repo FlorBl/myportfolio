@@ -1,3 +1,4 @@
+import datetime
 from django.shortcuts import render
 from django.http import HttpResponse
 from PortfolioDev.models import Visitor
@@ -39,8 +40,13 @@ def ajax_test(request):
         if len(name) < 1:
             name = 'No name'
             
+        x = datetime.datetime.now()
+        day = x.strftime("%d")
+        month = x.strftime("%B")
+        year = x.year
         
-        template = render_to_string('contact.html', {'name':name, 'email':email, 'message':message})
+        message=""
+        template = render_to_string('test.html', {'name':name.capitalize(), 'email':email, 'message':message, 'day':day, 'month':month, 'year':year})
         
         subject = 'New Message from Visitor'
         from_email = settings.DEFAULT_FROM_EMAIL
